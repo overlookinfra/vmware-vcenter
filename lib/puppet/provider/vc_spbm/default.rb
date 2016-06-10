@@ -58,6 +58,7 @@ Puppet::Type.type(:vc_spbm).provide(:vc_spbm, :parent => Puppet::Provider::Vcent
 
   def replica_preference=(value)
     Puppet.debug("Updating value #{value} of replica_preference to #{resource[:replica_preference]}")
+    return true if value.empty?
     found = false
 
     profile = exiting_profiles.find { |x| x.name == resource[:name]}
@@ -103,6 +104,7 @@ Puppet::Type.type(:vc_spbm).provide(:vc_spbm, :parent => Puppet::Provider::Vcent
 
   def host_failures_to_tolerate=(value)
     Puppet.debug("Updating value #{value} of hostFailuresToTolerate to #{resource[:host_failures_to_tolerate]}")
+    return true if value.empty?
     found = false
 
     profile = exiting_profiles.find { |x| x.name == resource[:name]}
@@ -147,6 +149,7 @@ Puppet::Type.type(:vc_spbm).provide(:vc_spbm, :parent => Puppet::Provider::Vcent
 
   def stripe_width=(value)
     Puppet.debug("Updating value #{value} of stripeWidth to #{resource[:stripe_width]}")
+    return true if value.empty?
     found = false
 
     profile = exiting_profiles.find { |x| x.name == resource[:name]}
@@ -191,6 +194,7 @@ Puppet::Type.type(:vc_spbm).provide(:vc_spbm, :parent => Puppet::Provider::Vcent
 
   def force_provisioning=(value)
     Puppet.debug("Updating value #{value} of forceProvisioning to #{resource[:force_provisioning]}")
+    return true if value.empty?
     found = false
 
     profile = exiting_profiles.find { |x| x.name == resource[:name]}
@@ -235,6 +239,7 @@ Puppet::Type.type(:vc_spbm).provide(:vc_spbm, :parent => Puppet::Provider::Vcent
 
   def proportional_capacity=(value)
     Puppet.debug("Updating value #{value} of proportionalCapacity to #{resource[:proportional_capacity]}")
+    return true if value.empty?
     found = false
 
     profile = exiting_profiles.find { |x| x.name == resource[:name]}
@@ -279,6 +284,7 @@ Puppet::Type.type(:vc_spbm).provide(:vc_spbm, :parent => Puppet::Provider::Vcent
 
   def cache_reservation=(value)
     Puppet.debug("Updating value #{value} of cacheReservation to #{resource[:cache_reservation]}")
+    return true if value.empty?
     found = false
 
     profile = exiting_profiles.find { |x| x.name == resource[:name]}
